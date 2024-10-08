@@ -22,9 +22,11 @@ public class Application {
         try {
             Evento evFound = myDaos.getById(2);
             System.out.println(evFound);
+            myDaos.delEvento(1);
         } catch (EventDontFoundException ex) {
             System.out.println(ex.getMessage());
         }
+
 
     }
 }

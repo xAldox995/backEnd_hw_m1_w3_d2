@@ -29,5 +29,12 @@ public class EventsDAO {
         }
     }
 
-
+    public void delEvento(long id) {
+        Evento evFound = this.getById(id);
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+        em.remove(evFound);
+        transaction.commit();
+        System.out.println("L'evento con id " + id + " è stato eliminato");
+    }
 }
